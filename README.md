@@ -1,1 +1,11 @@
-# Mark
+        on: [push]
+
+        jobs:
+          build:
+            runs-on: ubuntu-latest
+            steps:
+              - name: Checkout code
+                uses: actions/checkout@v3
+              - name: Run tests
+                run: |
+                  python -m unittest discover
